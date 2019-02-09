@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>MediaPlayer.qml</file>
+        <file>MpvPlayer.qml</file>
+    </qresource>
+</RCC>
