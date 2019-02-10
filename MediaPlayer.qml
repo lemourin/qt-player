@@ -109,6 +109,11 @@ Item {
         playing ^= 1;
     }
 
+    Rectangle {
+      anchors.fill: parent
+      color: "black"
+    }
+
     Loader {
       id: player
       anchors.fill: parent

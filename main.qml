@@ -15,8 +15,8 @@ ApplicationWindow {
     focus: true
     player: "mpv"
     type: "video"
-    url: "/home/lemourin/Videos/numinous.mkv"
-    title: "numinous.mkv"
+    url: "/home/lemourin/Videos/haruhi.mkv"
+    title: "haruhi.mkv"
     volume: 1
     onEnded: title = "ended"
     onFullscreenChanged: {
