@@ -10,6 +10,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(Qt5 COMPONENTS Core Quick OpenGL REQUIRED)
 
-add_executable(${PROJECT_NAME} "main.cpp" "MpvPlayer.cpp" "qml.qrc" "resources.qrc")
+add_definitions(-DWITH_MPV -DWITH_THUMBNAILER)
+add_executable(${PROJECT_NAME} "main.cpp" "MpvPlayer.cpp" "ThumbnailGenerator.cpp" "qml.qrc" "resources.qrc")
 target_compile_definitions(${PROJECT_NAME} PRIVATE $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)
-target_link_libraries(${PROJECT_NAME} PRIVATE Qt5::Core Qt5::Quick Qt5::OpenGL stdc++ mpv)
+target_link_libraries(${PROJECT_NAME} PRIVATE Qt5::Core Qt5::Quick Qt5::OpenGL stdc++ mpv avcodec avutil avformat swscale avfilter)

@@ -274,7 +274,8 @@ void MpvPlayer::eventOccurred() {
     } else if (event->event_id == MPV_EVENT_LOG_MESSAGE) {
       auto e = reinterpret_cast<mpv_event_log_message *>(event->data);
       std::string text = e->text;
-      if (text.length() > 0) qDebug() << text.substr(0, text.length() - 1).c_str();
+      if (text.length() > 0)
+        qDebug() << text.substr(0, text.length() - 1).c_str();
     } else if (event->event_id == MPV_EVENT_NONE) {
       break;
     }

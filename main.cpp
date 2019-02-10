@@ -4,6 +4,7 @@
 #include <QQuickView>
 
 #include "MpvPlayer.h"
+#include "ThumbnailGenerator.h"
 
 int main(int argc, char *argv[]) {
   QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
@@ -16,7 +17,9 @@ int main(int argc, char *argv[]) {
 
   qmlRegisterType<MpvPlayer>("mpv", 1, 0, "MpvPlayer");
 
-  QQmlApplicationEngine engine(QUrl(QStringLiteral("qrc:/main.qml")));
+  QQmlApplicationEngine engine;
+  engine.addImageProvider("thumbnailer", new ThumbnailGenerator);
+  engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
 
   return app.exec();
 }

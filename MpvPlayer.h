@@ -23,8 +23,6 @@
 #ifndef MPVPLAYER_H
 #define MPVPLAYER_H
 
-#define WITH_MPV
-
 #ifdef WITH_MPV
 
 #include <QQuickFramebufferObject>
